@@ -1,9 +1,9 @@
 Q11. Can storage account name be duplicate? Give reason
-
 Ans: NO
 Reason: Storage account name is part of blob storage endpoint(URL). Hence if name get duplicated then two different storage account will have same end point. To avoid this problem azure ensures name must be unique.
 For example: Stg Account name is "azurelib" then end point is:
 http://azurelib.blob.core.windows.net
+
 
 Q12. What are the types of blobs in Azure Storage
 Ans: Azure Storage supports three types of blobs:
@@ -14,3 +14,78 @@ Append blobs: Made up of blocks like block blobs, but are optimized for append o
 Append blobs are ideal for scenarios such as logging data from virtual machines. Updating or deleting of existing blocks is not supported. Unlike a block blob, an append blob does not expose its block IDs.
 
 Page blobs: Page blobs store random access files up to 8 TiB in size. Page blobs store virtual hard drive (VHD) files and serve as disks for Azure virtual machines.
+
+
+Q13. What are the factors affecting the cost of Storage account?
+Ans: Azure Storage cost factors are:
+
+Region: refers to the geographical region in which your account is based. 
+
+Account type: refers to the type of storage account you're using.
+
+Access tier. refers to the data usage pattern you've specified for your general-purpose v2 or Blob Storage account.
+
+Redundancy: determines how many copies of your data are maintained at one time, and in what locations.
+
+Transactions: refer to all read and write operations to Azure Storage. 
+
+Data egress: refers to any data transferred out of an Azure region.
+
+
+
+Q14. What are the different ways of authorizing the data access for storage account?
+Ans: Authorization can be as follows:
+
+Account access keys (Shared Key): It provides the entire access to the storage account including all the service.
+
+SAS token(Shared Access Signature): Here you can provide conditional access like on type of service, time duration and various access methods.
+
+Azure AD: To provide the Role based access control (RBAC)
+
+
+Q15. How Azure ensures data security for storage account?
+Ans: Azure Storage uses server-side encryption (SSE) to automatically encrypt data when it is persisted to the cloud. It uses 256-bit AES encryption.
+
+Azure Storage encryption cannot be disabled
+
+Encryption can be done using Microsoft-managed keys or you can manage encryption with your own keys i.e. called as customer managed keys.
+
+Customer-managed keys must be stored in Azure Key Vault or Azure Key Vault Managed Hardware Security Model (HSM) (preview).
+
+
+Q16. How to ensure data protection in Azure blob Storage.
+Ans:Configure an Azure Resource Manager lock on the storage account to protect the account from deletion.
+
+Enable container soft delete for the storage account to container and its contents.
+
+For Blob Storage workloads, enable blob versioning to automatically save the
+state of your data each time a blob is overwritten
+
+For Azure Data Lake Storage workloads, take manual snapshots to save the state
+of your data at a particular point in time
+
+
+Q17. How container soft delete works?
+Ans: When we enable container soft delete, we can specify a retention period for deleted containers that is between 1 and 365 days.
+
+The default retention period is seven days. During the retention period, you can recover a deleted container by calling the Restore
+Container operation.
+
+Q18. What is AzCopy tool?
+Ans: AzCopy is a command-line utility that you can use to copy blobs or files to or from a storage account.
+
+You can provide authorization credentials by using Azure Active Directory (AD), or by using a Shared Access Signature (SAS) token.
+
+
+Q19. Difference between Azure blob storage and ADLS?
+Ans: ADLS (Azure data lake storage) supports the hierarchical namespaces. It means we can have folder structure. While blob storage is flat file structure.
+
+ADLS is meant for big data workload. For example if you are about to store the data which is going to be used in Hadoop or spark. Then store in ADLS, as you get better performance.
+
+
+Q20. Why you have two access keys (Key1 & Key2) for storage account?
+Ans: Two keys are meant use to replace the key in proper manner in caseof key got compromised or needed to be regenerated due to compliance.
+
+For example: Suppose key1 got compromised, which is used by 10 applications. To avoid any downtime or interruption, replace key1 with key2 slowly in all the applications.
+
+Once the key1 is replaced by key2, regenerate key1. Now all unintended access will be cut off.
