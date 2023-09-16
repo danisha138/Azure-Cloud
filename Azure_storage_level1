@@ -1,0 +1,68 @@
+Q1. What is Azure Storage
+It is cloud storage solution for modern data storage scenarios.
+It works whether you want to store the data of any format like images, csv, text, audio, video, binary files.
+You can access data stored in storage account in multiple ways like through https,
+in programmatic manner through rest APIs or through powershell commands.
+
+
+Q2. What are the benefits of Azure Storage
+1.Durable and highly available.
+2.Secure
+3.Scalable
+4.Managed
+5. Accessible
+
+Q3. What are the different Azure Storage data services
+Azure Blobs: Object store for text and binary data. Includes support for big data analytics through Data Lake Storage Gen2 (ADLS).
+
+Azure Files: Managed file shares for cloud or on-premises deployments.
+
+Azure Queues: A messaging store for reliable messaging between application components.
+
+Azure Tables: A NOSQL store for schemaless storage of structured data.
+
+Azure Disks: Block-level storage volumes for Azure VMs.
+
+
+Q4. What is Azure Blob storage
+Blob storage is optimized for storing unstructured data. Blob storage few use case scenarios:
+Serving images or documents directly to a browser.
+Storing files for distributed access.
+Streaming video and audio.
+Writing to log files.
+Storing data for backup and restore, disaster recovery, and archiving
+
+Q5. What is Azure Data Lake Storage Gen2.
+Azure Data Lake Storage Gen2, Microsoft's enterprise big data analytics solution for the cloud.
+It includes all the advantages of Blob storage.
+Plus it offers hierarchical file system.
+
+Q6. What is Azure Files?
+File share service in the cloud.
+It is accessible via industry standard Server Message Block (SMB) protocol or Network File System (NFS) protocol
+SMB Azure file shares are accessible from Windows, Linux, and macOS clients.
+NFS Azure Files shares are accessible from Linux or macOS clients.
+
+Q7. What are key benefits of Azure files
+Shared access.
+Fully managed.
+Scripting and tooling.
+Resiliency
+Familiar programmability
+
+Q8. What is Azure Queue Storage?
+It is service for storing large numbers of messages.
+A queue message can be up to 64 KB in size.
+A queue may contain millions of messages, up to the total capacity limit of a storage account.
+You access messages from anywhere via authenticated calls using HTTP or HTTPS.
+
+Q9. Does Azure Queue Storage guarantee ordering?
+No.
+Messages in Storage queues are typically first-in-first-out, but sometimes they can be out of order.
+
+
+Q10. What is Azure Table storage?
+Service that stores non-relational structured data (No-SQL data)
+It is schemaless, fast and cost effective
+It can store TBS of structured data.
+Quickly querying data using a clustered index
