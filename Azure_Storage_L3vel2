@@ -1,0 +1,16 @@
+Q11. Can storage account name be duplicate? Give reason
+
+Ans: NO
+Reason: Storage account name is part of blob storage endpoint(URL). Hence if name get duplicated then two different storage account will have same end point. To avoid this problem azure ensures name must be unique.
+For example: Stg Account name is "azurelib" then end point is:
+http://azurelib.blob.core.windows.net
+
+Q12. What are the types of blobs in Azure Storage
+Ans: Azure Storage supports three types of blobs:
+
+Block blobs: Store text and binary data. It is comprised of blocks of data that can be managed individually. Block blobs max strorgae capacity 190.7 TiB.
+
+Append blobs: Made up of blocks like block blobs, but are optimized for append operations.
+Append blobs are ideal for scenarios such as logging data from virtual machines. Updating or deleting of existing blocks is not supported. Unlike a block blob, an append blob does not expose its block IDs.
+
+Page blobs: Page blobs store random access files up to 8 TiB in size. Page blobs store virtual hard drive (VHD) files and serve as disks for Azure virtual machines.
